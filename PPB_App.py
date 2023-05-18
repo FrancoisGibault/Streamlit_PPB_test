@@ -373,8 +373,7 @@ def visuSpe():
       ds["Nb zero"] = ds['Identifiant du compteur'].apply(lambda x: df[(df['Identifiant du compteur']==x) & (df['Comptage horaire']==0)]['Comptage horaire'].count())
       valCountMax = max(ds["Nb comptage"])
       ds["Taux d'erreurs"] = round(( (ds["Nb zero"] + valCountMax - ds["Nb comptage"] )/ valCountMax)*100,2)
-      ds["Select"]=False
-
+     
       ds = ds.drop(['Identifiant du compteur'], axis=1)
       ds['Voie'] = ds['Nom du compteur'].apply(lambda x: " ".join(x.split()[1:-1]))
       col = ds.pop('Voie')
@@ -382,14 +381,14 @@ def visuSpe():
 
       colA, colB = st.columns([5, 1])
       with colA:
-        edited_df = st.experimental_data_editor(ds.iloc[:,1:])
-        select=edited_df[edited_df['Select']==True]['Nom du compteur'].tolist()
+        st.experimental_data_editor(ds.iloc[:,1:], height = 250)
+      
       with colB: 
         periode = st.radio(
               "Periode",
               ('A date', 'Au mois', 'Au jour',"A l'heure"))
 
-
+      select = st.multiselect('Sélectionnez les compteurs à afficher', ds['Nom du compteur'].unique())
       dfCol['date'] = dfCol["Date et heure de comptage"].apply(lambda x: x.date)
 
       for i in select:
