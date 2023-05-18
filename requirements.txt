@@ -8,3 +8,4 @@ altair==4.2.0
 pandas_datareader
 seaborn==0.12.2
 requests==2.27.1
+https://github.com/lukasmasuch/st-playground/releases/download/data-editor-0.0.7/streamlit-1.17.0-py2.py3-none-any.whl
