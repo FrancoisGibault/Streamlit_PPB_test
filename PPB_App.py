@@ -381,7 +381,7 @@ def visuSpe():
 
       colA, colB = st.columns([5, 1])
       with colA:
-        st.experimental_data_editor(ds.iloc[:,1:], height = 250)
+        st.dataframe(ds.iloc[:,1:], height = 250)
       
       with colB: 
         periode = st.radio(
