@@ -229,7 +229,7 @@ def stats():
       sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="min",label='Min')
       plt.ylabel('Comptage')
       plt.legend(frameon=False)
-
+      plt.style.use("dark_background")
       st.pyplot(fig)
     
       
@@ -253,6 +253,7 @@ def stats():
     plt.grid(axis = 'y', color='dimgrey')
     sns.barplot(data =dm, x='Mois', y="Comptage horaire", hue='Annee')
     plt.legend(frameon=False);
+    plt.style.use("dark_background")
     st.pyplot(fig)
     
 
@@ -267,6 +268,7 @@ def stats():
     plt.grid(axis = 'y', color='dimgrey')
     sns.barplot(data =dm, x='Heures', y="Comptage horaire", hue='Annee')
     plt.legend(frameon=False);
+    plt.style.use("dark_background")
     st.pyplot(fig)
 
 
@@ -284,6 +286,7 @@ def stats():
     sns.barplot(data =dm, x='Jours', y="Comptage horaire", hue='Annee')
     ax.set_xticklabels(days)
     plt.legend(frameon=False);
+    plt.style.use("dark_background")
     st.pyplot(fig)
     
     with st.expander("See explanation"):
