@@ -1,4 +1,5 @@
 import streamlit as st
+from annotated_text import annotated_text
 import requests
 from io import BytesIO
 import pandas as pd
@@ -541,10 +542,21 @@ if __name__=="__main__":
     #url_data = "Extrait_comptage.csv"
     
     df,dfCol,dft,nbColInit,dxtrait = load_data(url_data)
- 
-
     # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
-   
+    annotated_text(
+        "This ",
+        ("is", "verb"),
+        " some ",
+        ("annotated", "adj"),
+        ("text", "noun"),
+        " for those of ",
+        ("you", "pronoun"),
+        " who ",
+        ("like", "verb"),
+        " this sort of ",
+        ("thing", "noun"),
+        "."
+        )
     # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
     if st.session_state['counter']==1:
      st.experimental_rerun()            # on redémarre pour effacer "changement des données"    
