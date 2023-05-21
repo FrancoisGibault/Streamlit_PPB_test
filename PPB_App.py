@@ -212,9 +212,13 @@ def stats():
       plt.rcParams['xtick.color'] = COLOR
       plt.rcParams['ytick.color'] = COLOR
       
-      dfCol['moyenne'] = dfCol.mean(axis=1)
-      dfCol['min'] = dfCol.min(axis=1)
-      dfCol['max'] = dfCol.max(axis=1)
+      nbcol = len(dfCol.columns)-1
+      dfCol['moyenne'] = dfCol.iloc[:,1:nbcol].mean(axis=1)
+      #dfCol['moyenne'] = dfCol.mean(axis=1)
+      dfCol['min'] = dfCol.iloc[:,1:nbcol].min(axis=1)
+      #dfCol['min'] = dfCol.min(axis=1)
+      dfCol['max'] = dfCol.iloc[:,1:nbcol].max(axis=1)
+      #dfCol['max'] = dfCol.max(axis=1)
 
       fig, ax = plt.subplots(figsize=(8, 5))
       fig.patch.set_facecolor('black')
