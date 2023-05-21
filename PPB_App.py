@@ -1,5 +1,4 @@
 import streamlit as st
-from annotated_text import annotated_text
 import requests
 from io import BytesIO
 import pandas as pd
@@ -129,7 +128,7 @@ def stats_gene(df):
     col1, col2 = st.columns(2)
 
     with col1:
-      txt="Période de compatge : du :green[" + debut + "] au :green[" + fin +"]"
+      txt="Période de compatge : du " + debut + " au " + fin 
       st.markdown(txt)
       st.write("Nombre de comptage par heure : ",freq)
 
@@ -543,20 +542,7 @@ if __name__=="__main__":
     
     df,dfCol,dft,nbColInit,dxtrait = load_data(url_data)
     # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
-    annotated_text(
-        "This ",
-        ("is", "verb"),
-        " some ",
-        ("annotated", "adj"),
-        ("text", "noun"),
-        " for those of ",
-        ("you", "pronoun"),
-        " who ",
-        ("like", "verb"),
-        " this sort of ",
-        ("thing", "noun"),
-        "."
-        )
+
     # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
     if st.session_state['counter']==1:
      st.experimental_rerun()            # on redémarre pour effacer "changement des données"    
