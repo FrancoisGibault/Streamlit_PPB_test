@@ -147,6 +147,7 @@ def stats_gene(df):
       ax.spines[:].set_color(COLOR)
       ax.patch.set_facecolor('black')
       sns.countplot(data = dinst, x = "Annee d'installation")
+      plt.style.use("dark_background")
       plt.ylabel("Nombre de compteurs")
       st.pyplot(fig) 
       # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
