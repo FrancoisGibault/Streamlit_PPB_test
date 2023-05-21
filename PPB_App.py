@@ -320,7 +320,8 @@ def correla():
         dfCol2 = dfCol2.merge(dg[['Date et heure de comptage','Comptage horaire']], on ='Date et heure de comptage', how="outer")
         dfCol2 = dfCol2.rename(columns={'Comptage horaire' : nm} )
    
-      st.dataframe(dfCol2)  
+      nbcol = len(dfCol2.columns)-1
+      dfCol2 = dfCol2.iloc[:,1:nbcol]
     
       plt.style.use('classic')
       fig, ax = plt.subplots(figsize = (10,10))
