@@ -320,12 +320,10 @@ def correla():
         dfCol2 = dfCol2.merge(dg[['Date et heure de comptage','Comptage horaire']], on ='Date et heure de comptage', how="outer")
         dfCol2 = dfCol2.rename(columns={'Comptage horaire' : nm} )
    
+      st.dataframe(dfCol2)  
+    
       plt.style.use('classic')
       fig, ax = plt.subplots(figsize = (10,10))
-      
-  #    fig.patch.set_facecolor('black')
-  #    ax.spines[:].set_color(COLOR)
-  #    ax.patch.set_facecolor('white')
       sns.heatmap(dfCol2.corr(), annot = True, ax =ax, cmap = "coolwarm") # annot = 
       st.pyplot(fig)
       sns.reset_orig()
