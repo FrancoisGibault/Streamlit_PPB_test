@@ -244,7 +244,7 @@ def stats():
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
 
-    colors = ["#FF0B04", "#f58220"]
+    colors = ["#75bee9", "#f58220"]
 
     sns.set_palette(sns.color_palette(colors))
   
