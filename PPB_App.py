@@ -242,15 +242,17 @@ def stats():
  # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
-    st.write(type(dm.Annee.unique()[0]))
-    cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee]
+    #st.write(type(dm.Annee.unique()[0]))
+    #cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee]
+    
+    sns.set_style('darkgrid')
       
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
     ax.spines[:].set_color(COLOR)
     ax.patch.set_facecolor('black')
     plt.grid(axis = 'y', color='dimgrey')
-    sns.color_palette("tab10")
+  
     sns.barplot(data =dm, x='Mois', y="Comptage horaire", palette=cols , hue='Annee')
     plt.legend(frameon=False);
     plt.style.use("dark_background")
