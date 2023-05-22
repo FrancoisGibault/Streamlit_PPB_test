@@ -245,10 +245,11 @@ def stats():
     dm = dm.reset_index()
     #st.write(type(dm.Annee.unique()[0]))
     #cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee]
-    
+    # Create an array with the colors you want to use
+    colors = ["#FF0B04", "#4374B3"]
+    # Set your custom color palette
+    sns.set_palette(sns.color_palette(colors))
     #sns.set_style('whitegrid')
-    sns.color_palette("Paired")
-    
     
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
