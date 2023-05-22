@@ -220,7 +220,7 @@ def stats():
 
       fig, ax = plt.subplots(figsize=(8, 5))
       fig.patch.set_facecolor('black')
-      ax.spines[:].set_color(COLOR)
+      ax.spines[:].set_color('grey')
       ax.patch.set_facecolor('black')
       sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="max",label='Max', color='cornflowerblue')
       sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="moyenne",label='Moyenne', color='tan')
@@ -255,7 +255,7 @@ def stats():
   
     sns.barplot(data =dm, x='Mois', y="Comptage horaire", hue='Annee')
     plt.legend(frameon=False);
-    plt.style.use("dark_background")
+    #plt.style.use("dark_background")
     st.pyplot(fig)
     
 
