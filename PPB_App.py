@@ -247,7 +247,9 @@ def stats():
     #cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee]
     
     #sns.set_style('whitegrid')
-    sns.color_palette()
+    sns.color_palette("Paired")
+    
+    
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
     ax.spines[:].set_color(COLOR)
