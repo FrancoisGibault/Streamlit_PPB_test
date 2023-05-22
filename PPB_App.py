@@ -222,6 +222,7 @@ def stats():
       fig.patch.set_facecolor('black')
       ax.spines[:].set_color('grey')
       ax.patch.set_facecolor('black')
+      plt.grid(axis = 'y', color='dimgrey')
       sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="max",label='Max', color='cornflowerblue')
       sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="moyenne",label='Moyenne', color='tan')
       sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="min",label='Min',color='darkviolet')
