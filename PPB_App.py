@@ -245,7 +245,7 @@ def stats():
     #st.write(type(dm.Annee.unique()[0]))
     #cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee]
     
-    sns.set_style('darkgrid')
+    sns.set_style('whitegrid')
       
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
