@@ -419,6 +419,8 @@ def visuSpe():
 
             COLOR = 'white'
             COLORplus= "purple"
+            colors = ["#bef8fc", "#f58220"]
+            sns.set_palette(sns.color_palette(colors))
 
             if (periode == 'Au mois'):
                 dx['Mois'] = dx['Date et heure de comptage'].apply(lambda x: x.month)
