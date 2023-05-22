@@ -9,8 +9,6 @@ import seaborn as sns
 from matplotlib.dates import (YEARLY, MONTHLY, DateFormatter,
                               rrulewrapper, RRuleLocator, drange)
 
-
-
 def ouverture_session():
     if 'counter' not in st.session_state:
       st.session_state['counter'] = 0
@@ -224,9 +222,9 @@ def stats():
       fig.patch.set_facecolor('black')
       ax.spines[:].set_color(COLOR)
       ax.patch.set_facecolor('black')
-      sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="max",label='Max')
-      sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="moyenne",label='Moyenne')
-      sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="min",label='Min')
+      sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="max",label='Max', color='cornflowerblue')
+      sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="moyenne",label='Moyenne', coolor='limegreen')
+      sns.lineplot(data =dfCol[dfCol["max"] < (moyenne + maxi*valMax)], x='Date et heure de comptage', y="min",label='Min',color='darkviolet')
       plt.ylabel('Comptage')
       plt.legend(frameon=False)
       plt.style.use("dark_background")
