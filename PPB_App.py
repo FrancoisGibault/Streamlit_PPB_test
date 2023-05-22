@@ -245,7 +245,7 @@ def stats():
     #st.write(type(dm.Annee.unique()[0]))
     #cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee]
     
-    sns.set_style('whitegrid')
+    #sns.set_style('whitegrid')
       
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
@@ -255,7 +255,7 @@ def stats():
   
     sns.barplot(data =dm, x='Mois', y="Comptage horaire", hue='Annee')
     plt.legend(frameon=False);
-    #plt.style.use("dark_background")
+    plt.style.use("dark_background")
     st.pyplot(fig)
     
 
