@@ -249,7 +249,7 @@ def stats():
     ax.spines[:].set_color(COLOR)
     ax.patch.set_facecolor('black')
     plt.grid(axis = 'y', color='dimgrey')
-    sns.color_palette("Paired")
+    sns.color_palette("tab10")
     sns.barplot(data =dm, x='Mois', y="Comptage horaire", hue='Annee')
     plt.legend(frameon=False);
     plt.style.use("dark_background")
