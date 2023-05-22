@@ -249,7 +249,7 @@ def stats():
     ax.spines[:].set_color(COLOR)
     ax.patch.set_facecolor('black')
     plt.grid(axis = 'y', color='dimgrey')
-    sns.barplot(data =dm, x='Mois', y="Comptage horaire", hue='Annee')
+    sns.barplot(data =dm, x='Mois', y="Comptage horaire", hue='Annee', color = ['royalblue', 'chocolate'])
     plt.legend(frameon=False);
     plt.style.use("dark_background")
     st.pyplot(fig)
