@@ -240,10 +240,10 @@ def stats():
        "Date d'installation du site de comptage"]])
 
  # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
-    cols = ['royalblue' if x == 2022 else 'chocolate' for x in df.Annee]
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
-    
+    cols = ['royalblue' if x == 2022 else 'chocolate' for x in dm.Annee]
+      
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
     ax.spines[:].set_color(COLOR)
