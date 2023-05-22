@@ -242,7 +242,7 @@ def stats():
  # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
-    st.write(dm.Annee.unique())
+    st.write(type(dm.Annee.unique()[0]))
     cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee]
       
     fig, ax =plt.subplots(figsize=(15, 3))
