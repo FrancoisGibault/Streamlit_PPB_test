@@ -240,7 +240,7 @@ def stats():
        "Date d'installation du site de comptage"]])
 
  # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
-    cols = ['royalblue' if x < 2023 else 'chocolate' for x in df.Annee]
+    cols = ['royalblue' if x == 2022 else 'chocolate' for x in df.Annee]
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
     
