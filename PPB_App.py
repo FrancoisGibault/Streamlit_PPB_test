@@ -240,7 +240,7 @@ def stats():
        "Date d'installation du site de comptage"]])
 
  # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
-  
+    cols = ['royalblue' if x < 2023 else 'chocolate' for x in df.Annee]
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
     
@@ -250,7 +250,7 @@ def stats():
     ax.patch.set_facecolor('black')
     plt.grid(axis = 'y', color='dimgrey')
     sns.color_palette("tab10")
-    sns.barplot(data =dm, x='Mois', y="Comptage horaire", hue='Annee')
+    sns.barplot(data =dm, x='Mois', y="Comptage horaire", palette=cols )
     plt.legend(frameon=False);
     plt.style.use("dark_background")
     st.pyplot(fig)
