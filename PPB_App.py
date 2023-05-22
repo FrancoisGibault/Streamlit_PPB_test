@@ -243,14 +243,11 @@ def stats():
  # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
-    #st.write(type(dm.Annee.unique()[0]))
-    #cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee]
-    # Create an array with the colors you want to use
-    colors = ["#FF0B04", "#4374B3"]
-    # Set your custom color palette
+
+    colors = ["#FF0B04", "#f58220"]
+
     sns.set_palette(sns.color_palette(colors))
-    #sns.set_style('whitegrid')
-    
+  
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
     ax.spines[:].set_color(COLOR)
@@ -266,7 +263,7 @@ def stats():
  # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
     dm = df.groupby(["Heures",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
-    
+    sns.set_palette(sns.color_palette(colors))
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
     ax.spines[:].set_color(COLOR)
@@ -283,7 +280,7 @@ def stats():
     
     dm = df.groupby(["Jours",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
-    
+    sns.set_palette(sns.color_palette(colors))
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
     ax.spines[:].set_color(COLOR)
