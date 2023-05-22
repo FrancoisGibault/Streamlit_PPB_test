@@ -242,7 +242,7 @@ def stats():
  # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️    
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
-    cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee.astyp('float')]
+    cols = ['royalblue' if x < '2023' else 'chocolate' for x in dm.Annee.astype('float')]
       
     fig, ax =plt.subplots(figsize=(15, 3))
     fig.patch.set_facecolor('black')
