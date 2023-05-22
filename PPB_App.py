@@ -244,7 +244,7 @@ def stats():
     dm = df.groupby(["Mois",'Annee']).agg({'Comptage horaire':'mean'})
     dm = dm.reset_index()
 
-    colors = ["#bef8fc", "#f58220"]
+    colors = ["#056cb6", "#f58220"]
 
     sns.set_palette(sns.color_palette(colors))
   
@@ -419,7 +419,7 @@ def visuSpe():
 
             COLOR = 'white'
             COLORplus= "purple"
-            colors = ["#bef8fc", "#f58220"]
+            colors = ["#056cb6", "#f58220"]
             sns.set_palette(sns.color_palette(colors))
 
             if (periode == 'Au mois'):
